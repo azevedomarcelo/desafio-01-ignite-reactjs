@@ -1,0 +1,82 @@
+/* Checkbox.css */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 16px;
+  background: #262626;
+  border-radius: 16px;
+  justify-content: space-between;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  /* Hide the default checkbox */
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  /* Adjust the appearance of the checkbox */
+  width: 20px;
+  height: 20px;
+}
+
+label {
+  /* Style the checkbox container */
+  position: relative;
+  padding-left: 37px; /* Create space for the custom checkbox */
+  font-size: 14px;
+  margin-right: 12px;
+  cursor: pointer;
+  color: #F2F2F2;
+}
+
+/* Style the custom checkbox */
+label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4EA8DE; /* Change the border color as desired */
+  background-color: transparent; /* Change the background color as desired */
+  border-radius: 50%;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  left: 24px;
+  top: 20px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.textChecked {
+  color: #808080;
+  text-decoration-line: line-through;
+}
+
+/* Style the custom checkbox when checked */
+input[type="checkbox"]:checked + label:before {
+  background-color: #8284FA; /* Change the background color for the checked state */
+  border: 1px solid #8284FA; /* Change the border color for the checked state */
+}
+
+.trashButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
